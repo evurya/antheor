@@ -1,0 +1,127 @@
+/* Styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #282828; /* Couleur de fond pour le mode nuit */
+    color: #918274; /* Couleur du texte */
+    font-family: Arial, sans-serif; /* Police de caractères */
+    display: flex;
+    flex-direction: column; /* Organiser les éléments verticalement */
+    justify-content: center; /* Centrer verticalement */
+    align-items: center; /* Centrer horizontalement */
+    height: 100vh; /* Hauteur de la fenêtre */
+    margin: 0; /* Supprimer les marges */
+    padding: 0; /* Supprimer les espacements internes */
+    overflow: hidden; /* Empêcher le défilement */
+    transition: background-color 0.5s, color 0.5s; /* Ajouter une transition pour les changements de couleur */
+}
+body.day-mode {
+    background-color: #f5edca; /* Couleur de fond pour le mode jour */
+    color: #282828; /* Couleur du texte pour le mode jour */
+}
+::selection {
+    background-color: #d4be98; /* Couleur de la sélection de texte */
+    color: #282828; /* Couleur du texte sélectionné */
+}
+.content {
+    text-align: center; /* Centrer le texte à l'intérieur du conteneur */
+    z-index: 1; /* S'assurer que le contenu est au-dessus de la barre */
+    flex: 1; /* Permettre à ce conteneur de prendre tout l'espace disponible */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    font-size: 3em; /* Taille de la police pour le titre */
+}
+.barre {
+    background-color: #1d2021; /* Couleur de la barre pour le mode nuit */
+    height: 50px; /* Hauteur de la barre */
+    width: 100%; /* Largeur de la barre */
+    display: flex; /* Utiliser flexbox pour aligner les éléments */
+    align-items: center; /* Centrer verticalement les éléments */
+    padding: 0 20px; /* Espacement à gauche et à droite */
+    z-index: 2; /* S'assurer que la barre est au-dessus des autres éléments */
+    transition: background-color 0.5s; /* Transition pour le changement de couleur de fond */
+    position: fixed; /* Position fixe pour coller la barre */
+    justify-content: space-between; /* Espacer les éléments aux extrémités */
+}
+.barre.bas {
+    bottom: 0; /* Coller la barre en bas */
+    left: 0; /* S'assurer que la barre commence à gauche */
+}
+.barre.haut {
+    top: 0; /* Coller la barre en haut */
+    left: 0; /* S'assurer que la barre commence à gauche */
+}
+body.day-mode .barre {
+    background-color: #f9f5d7; /* Couleur de la barre pour le mode jour */
+}
+.barre i {
+    color: #a79a83; /* Couleur des icônes pour le mode nuit */
+    font-size: 21px; /* Taille des icônes */
+    cursor: pointer; /* Curseur en mode pointeur */
+    transition: color 0.5s; /* Transition pour le changement de couleur des icônes */
+}
+.barre i:hover {
+    color: #644735; /* Couleur des icônes au survol */
+}
+.header {
+    font-size: 1.5em; /* Taille de police */
+    color: inherit; /* Utiliser la couleur de texte héritée */
+    position: absolute; /* Position absolue pour placer en haut à gauche */
+    top: 20px; /* Espacement depuis le haut */
+    left: 20px; /* Espacement depuis la gauche */
+}
+.header a {
+    color: inherit; /* Utiliser la couleur de texte héritée */
+    text-decoration: none; /* Supprimer la décoration des liens */
+}
+.footer-text {
+    color: #945e80; /* Couleur du texte du pied de page */
+    font-family: 'Inter', system-ui, sans-serif; /* Police de caractères */
+    display: flex; /* Utiliser flexbox pour aligner les éléments */
+    align-items: center; /* Centrer verticalement les éléments */
+}
+.footer-text i {
+    margin-right: 8px; /* Espacement à droite des icônes */
+}
+.footer-text a {
+    color: #945e80; /* Couleur des liens du pied de page */
+    text-decoration: none; /* Supprimer la décoration des liens */
+    transition: color 0.5s; /* Transition pour le changement de couleur des liens */
+}
+.footer-text a:hover {
+    color: #a79a83; /* Couleur des liens au survol */
+}
+.footer-text span {
+    margin-left: 8px; /* Espacement à gauche du texte */
+    text-transform: uppercase; /* Mettre le texte en majuscules */
+    font-size: 12px; /* Taille de la police */
+}
+/* Styles pour la page de chargement */
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #282828; /* Couleur de fond pour le chargement */
+    color: #918274; /* Couleur du texte pour le chargement */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Assurer que la page de chargement est au-dessus de tout */
+}
+#loading h1 {
+    font-size: 3em; /* Taille de la police pour le titre */
+}
+#loading p {
+    font-size: 1.2em; /* Taille de la police pour le paragraphe */
+    margin-top: 20px; /* Espacement au-dessus du paragraphe */
+}
+
